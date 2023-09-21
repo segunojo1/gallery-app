@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [loading, setLoading] = useState(false);
-  const {email, password, setPassword, setEmail} = useContext(AuthContext);
+  const {email, password, setPassword, setEmail, err, setErr, resp, setResp} = useContext(AuthContext);
   let available;
   const navigate = useNavigate();
 
@@ -28,13 +28,15 @@ signInWithEmailAndPassword(auth, email, password)
     setLoading(false);
     const user = userCredential.user;
     console.log(user);
+    setResp('Login Successful!');
     navigate('/');
   })
   .catch((error) => {
     setLoading(false);
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorMessage, errorCode);
+    // console.log(errorMessage, errorCode);
+    setErr(errorMessage)
   });
    setEmail("");
    setPassword("");
@@ -54,8 +56,8 @@ signInWithEmailAndPassword(auth, email, password)
         <div className="flex h-[100vh] items-center justify-center">
           <div className="flex flex-col w-[400px] m-auto p-[2rem]">
             <h1 className="h1">Login to your account</h1>
-            {/* <h1 className={err !== '' ? styles.err : styles.hi}>{err}</h1>
-            <h1 className={resp !== '' ? styles.resp : styles.hi}>{resp}</h1> */}
+            <h1 className={err !== '' ? "err" : "hi"}>{err}</h1>
+            <h1 className={resp !== '' ? "resp" : "hi"}>{resp}</h1>
              <form action="">
               <div>
                <label htmlFor="email"> Email address </label>

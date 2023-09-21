@@ -6,11 +6,13 @@ import { AuthContext } from '../AuthContext';
 import google from "../assets/google.svg";
 import apple from "../assets/apple.svg";
 import { auth } from '../firebase';
+import { useNavigate } from "react-router-dom"
 
 const SignUp = () => {
         const [loading, setLoading] = useState(false);
-        const {email, password, setEmail, setPassword} = useContext(AuthContext);
+        const {email, password, setEmail, setPassword, err, setErr} = useContext(AuthContext);
         let available;
+        const navigate = useNavigate();
         if(email && password) {
                 available = false;
         }else{
@@ -26,13 +28,14 @@ const SignUp = () => {
                 setLoading(false);
                 const user = userCredential.user;
                 console.log(user);
-
+                navigate('/')
                 })
                 .catch((error) => {
                         setLoading(false);
                         const errorCode = error.code;
                         const errorMessage = error.message;
                         console.log(errorCode, errorMessage);
+                        setErr(errorMessage);
                 });
         }
 
@@ -51,7 +54,7 @@ const SignUp = () => {
                   <div className="flex h-[100vh] items-center justify-center">
                   <div className="flex flex-col w-[400px] m-auto p-[2rem] bg-[#fff]">
                     <h1 className="h1">Create an account</h1>
-                    {/* <h1 className={err !== '' ? styles.err : styles.hi}>{err}</h1> */}
+                    <h1 className={err !== '' ? "err" : "hi"}>{err}</h1>
                      <form action="">
                       <div>
                        <label htmlFor="email"> Email address </label>

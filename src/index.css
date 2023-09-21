@@ -2,11 +2,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.register{
+body{
     transition: ease-in-out 2s;
     font-family: "Raleway", sans-serif;
 }
-
+.image-item {
+  /* Adjust the styles for grid items */
+  background-color: #f0f0f0;
+  padding: 16px;
+  border: 1px solid #ccc;
+}
 #preloader {
         position: fixed;
         top: 0;
@@ -126,4 +131,18 @@ form {
 form div {
   display: flex;
   flex-direction: column;
+}
+.err{
+  padding: .7rem;
+  background-color: rgb(241, 150, 150);
+  color: rgb(216, 8, 8);
+  font-size: 23px;
+  border-radius: 6px;
+}
+.resp{
+  padding: .7rem;
+  background-color: rgb(166, 245, 184);
+  color: rgb(8, 243, 12);
+  font-size: 23px;
+  border-radius: 6px;
 }
