@@ -9,7 +9,10 @@ const Home = () => {
     <div>
       <MainHead />
       <Search />
+      <div className=''>
+
       <ImageGallery images={images}/>
+      </div>
     </div>
   )
 }

@@ -27,7 +27,7 @@ const ImageGallery = () => {
                 items={img}
                 strategy={rectSortingStrategy}
                 >
-                        <div className='grid grid-cols-3'>
+                        <div className='grid grid-cols-3 gap-5 p-5 '>
                         {img.map((ite) => <SortableItem key={ite.id} id={ite.id} url={ite.url}/>)}
                         </div>
                 </SortableContext>

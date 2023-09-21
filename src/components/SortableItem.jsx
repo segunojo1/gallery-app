@@ -18,7 +18,10 @@ export function SortableItem ({id, url}) {
 
        return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
-               <img src={url} alt="" />
+              <div className={`w-[400px] h-[400px] rounded-2xl`}
+              style={{backgroundImage: `url('${url}')`, backgroundPosition: "center", backgroundSize: "cover"}}>
+               {/* <img src={url} alt="" className=" object-cover"/> */}
+              </div>
         </div>
        )
 }
