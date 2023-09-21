@@ -78,7 +78,7 @@ const ImageGallery = () => {
                         (
                                 <Skeleton />
                         ) : (
-                        <div className='flex flex-wrap items-center justify-center gap-5 p-5 bg-black '>
+                        <div className='flex flex-wrap items-center justify-center gap-5 p-5 bg-black'>
                         {filteredImages.map((ite) => <SortableItem key={ite.id} id={ite.id} url={ite.url} tags={ite.tags}/>)}
                         </div>
                         )
