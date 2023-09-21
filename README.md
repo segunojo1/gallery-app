@@ -37,9 +37,9 @@ yarn
 # npm users
 npm install
 Start the server
-# yarn users
+## yarn users
 yarn dev
 
-# npm users
+## npm users
 npm run dev
 The server should begin live at http://127.0.0.1:5173/
