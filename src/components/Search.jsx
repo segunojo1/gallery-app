@@ -10,6 +10,7 @@ const Search = () => {
                 <input 
                 type="text" 
                 value={searchQuery}
+                placeholder= "Search Gallery"
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className='w-[70%] rounded-3xl outline-[0px] outline-none border-none'/>
         </div>
