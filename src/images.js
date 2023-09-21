@@ -5,7 +5,7 @@ export const images = [
                 "tags": "mountain"
               },
               {
-                "url": "/public/2.jpg",
+                "url": "/2.jpg",
                 "id" : "2",
                 "tags": "waterfall"
               },
@@ -20,32 +20,32 @@ export const images = [
                 "tags": "landscape"
               },
               {
-                "url": "/assets/5.jpg",
+                "url": "/5.jpg",
                 "id" : "5",
                 "tags": "mountain"
               },
               {
-                "url": "/assets/6.jpg",
+                "url": "/6.jpg",
                 "id" : "6",
                 "tags": "landscape"
               },
               {
-                "url": "/assets/7.jpg",
+                "url": "/7.jpg",
                 "id" : "7",
                 "tags": "flower"
               },
               {
-                "url": "/assets/8.jpg",
+                "url": "/8.jpg",
                 "id" : "8",
                 "tags": "sunset"
               },
               {
-                "url": "/assets/9.jpg",
+                "url": "/9.jpg",
                 "id" : "9",
                 "tags": "hill"
               },
               {
-                "url": "/assets/10.jpg",
+                "url": "/10.jpg",
                 "id" : "10",
                 "tags": "ocean"
               }
