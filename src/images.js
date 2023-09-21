@@ -15,7 +15,7 @@ export const images = [
                 "tags": "tree"
               },
               {
-                "url": "4.jpg",
+                "url": "/4.jpg",
                 "id" : "4",
                 "tags": "landscape"
               },
