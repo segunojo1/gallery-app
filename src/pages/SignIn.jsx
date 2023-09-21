@@ -7,6 +7,7 @@ import { AuthContext } from '../AuthContext';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const SignIn = () => {
   const [loading, setLoading] = useState(false);
@@ -28,7 +29,9 @@ signInWithEmailAndPassword(auth, email, password)
     setLoading(false);
     const user = userCredential.user;
     console.log(user);
-    setResp('Login Successful!');
+    const {accessToken, refreshToken} = user.stsTokenManager;
+    Cookies.set('accessToken', accessToken);
+    Cookies.set('refreshToken', refreshToken);
     navigate('/');
   })
   .catch((error) => {
@@ -52,7 +55,7 @@ signInWithEmailAndPassword(auth, email, password)
        : 
   
        <div className="register">
-        <Header content="Create account"/>
+        <Header content="signup"/>
         <div className="flex h-[100vh] items-center justify-center">
           <div className="flex flex-col w-[400px] m-auto p-[2rem]">
             <h1 className="h1">Login to your account</h1>

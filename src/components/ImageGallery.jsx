@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import ImageItem from './ImageItem';
 import { useState } from 'react';
 import { SortableItem } from './SortableItem';
@@ -13,10 +13,18 @@ import {
         closestCenter
 } from "@dnd-kit/core"
 import { images } from '../images';
+import { AuthContext } from '../AuthContext';
+import Skeleton from './Skeleton';
 
 const ImageGallery = () => { 
-
-        const [img, setImg] = useState(images);
+        const {img, setImg, filteredImages}= useContext(AuthContext);
+        const [isLoading, setIsLoading] = useState(true);
+        useEffect(() => {
+                // Simulate an asynchronous data fetch or loading process
+                setTimeout(() => {
+                  setIsLoading(false);
+                }, 2000); // Simulate a 2-second loading time
+              }, []);
   return (
         <DndContext
         collisionDetection={closestCenter}
@@ -27,9 +35,15 @@ const ImageGallery = () => {
                 items={img}
                 strategy={rectSortingStrategy}
                 >
-                        <div className='grid grid-cols-3 gap-5 p-5 '>
-                        {img.map((ite) => <SortableItem key={ite.id} id={ite.id} url={ite.url}/>)}
+                        {isLoading ? 
+                        (
+                                <Skeleton />
+                        ) : (
+                        <div className='flex flex-wrap items-center justify-center gap-5 p-5 bg-black '>
+                        {filteredImages.map((ite) => <SortableItem key={ite.id} id={ite.id} url={ite.url} tags={ite.tags}/>)}
                         </div>
+                        )
+                }
                 </SortableContext>
         </DndContext>
   );

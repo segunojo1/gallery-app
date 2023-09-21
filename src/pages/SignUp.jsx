@@ -7,6 +7,7 @@ import google from "../assets/google.svg";
 import apple from "../assets/apple.svg";
 import { auth } from '../firebase';
 import { useNavigate } from "react-router-dom"
+import Cookies from 'js-cookie';
 
 const SignUp = () => {
         const [loading, setLoading] = useState(false);
@@ -28,7 +29,10 @@ const SignUp = () => {
                 setLoading(false);
                 const user = userCredential.user;
                 console.log(user);
-                navigate('/')
+                const {accessToken, refreshToken} = user.stsTokenManager;
+                Cookies.set('accessToken', accessToken);
+                Cookies.set('refreshToken', refreshToken);
+                navigate('/');
                 })
                 .catch((error) => {
                         setLoading(false);
@@ -49,7 +53,7 @@ const SignUp = () => {
                 : 
                 <div className="regiser">
         
-                  <Header content="Login"/>
+                  <Header content="login"/>
         
                   <div className="flex h-[100vh] items-center justify-center">
                   <div className="flex flex-col w-[400px] m-auto p-[2rem] bg-[#fff]">

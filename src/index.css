@@ -83,6 +83,7 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: not-allowed;
     }
     .btn{
         background-color: #D24A46;
@@ -145,4 +146,33 @@ form div {
   color: rgb(8, 243, 12);
   font-size: 23px;
   border-radius: 6px;
+}
+.skeleton{
+  
+}
+.skeleton{
+  background: linear-gradient(
+    90deg, 
+    rgba(240, 240, 240, 0.8) 25%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(240, 240, 240, 0.8) 75%
+  );
+  width: 350px;
+  height: 350px;
+  border-radius: 20px;
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.imgg{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }

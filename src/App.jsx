@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import { AuthProvider } from './AuthContext'
+import PrivateRoute from './PrivateRoute'
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,9 +17,13 @@ function App() {
       <AuthProvider>
       <BrowserRouter>
       <Routes>
-        <Route path='/' element= {<Home />} />
         <Route path='/signup' element={<SignUp />} />
         <Route path='/login' element={<SignIn />} />
+        <Route path="/" element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }/>
       </Routes>
       </BrowserRouter>
       </AuthProvider>
