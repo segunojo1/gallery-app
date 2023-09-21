@@ -21,9 +21,10 @@ const ImageGallery = () => {
         const [isLoading, setIsLoading] = useState(true);
         useEffect(() => {
                 // Simulate an asynchronous data fetch or loading process
+                
                 setTimeout(() => {
                   setIsLoading(false);
-                }, 2000); // Simulate a 2-second loading time
+                }, 3000); // Simulate a 2-second loading time
               }, []);
   return (
         <DndContext

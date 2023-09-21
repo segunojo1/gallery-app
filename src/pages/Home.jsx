@@ -11,7 +11,7 @@ const Home = () => {
       <Search />
       <div className=''>
 
-      <ImageGallery images={images}/>
+      <ImageGallery images={images} />
       </div>
     </div>
   )
