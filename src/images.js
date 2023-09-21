@@ -1,36 +1,36 @@
 export const images = [
         {
-                "url": "/assets/1.jpg",
+                "url": "/1.jpg",
                 "id" : "1",
                 "tags": "mountain"
               },
               {
-                "url": "//assets/2.jpg",
+                "url": "/public/2.jpg",
                 "id" : "2",
                 "tags": "waterfall"
               },
               {
-                "url": "//assets/3.jpg",
+                "url": "/3.jpg",
                 "id" : "3",
                 "tags": "tree"
               },
               {
-                "url": "//assets/4.jpg",
+                "url": "4.jpg",
                 "id" : "4",
                 "tags": "landscape"
               },
               {
-                "url": "//assets/5.jpg",
+                "url": "/assets/5.jpg",
                 "id" : "5",
                 "tags": "mountain"
               },
               {
-                "url": "//assets/6.jpg",
+                "url": "/assets/6.jpg",
                 "id" : "6",
                 "tags": "landscape"
               },
               {
-                "url": "//assets/7.jpg",
+                "url": "/assets/7.jpg",
                 "id" : "7",
                 "tags": "flower"
               },
