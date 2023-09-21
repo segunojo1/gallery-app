@@ -19,7 +19,7 @@ export function SortableItem ({id, url, tags}) {
        return (
         <div ref={setNodeRef} style={style} {...attributes} {...listeners}>
               <div className={`w-[350px] h-[350px] rounded-2xl relative imgg`}
-              style={{backgroundImage: `url('${url}')`, backgroundPosition: "center", backgroundSize: "cover"}}>
+              style={{backgroundImage: `url('/public${url}')`, backgroundPosition: "center", backgroundSize: "cover"}}>
                {/* <img src={url} alt="" className=" object-cover"/> */}
                <div className="p-2 rounded-xl bg-[#F4B241] absolute text-white top-[10px] left-[10px] w-fit">
                   <p>{tags}</p>
